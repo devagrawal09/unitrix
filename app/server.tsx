@@ -10,15 +10,20 @@ export default eventHandler(async (event) => {
   const scriptSrc = clientHandler.output.path;
 
   const stream = await new Promise(async (resolve) => {
-    const stream = renderToPipeableStream(<MyApp />, {
-      onShellReady() {
-        resolve(stream);
-      },
-      bootstrapModules: [scriptSrc],
-      bootstrapScriptContent: `window.manifest = ${JSON.stringify(
-        await clientManifest.json()
-      )}`,
-    });
+    const stream = renderToPipeableStream(
+      <MyApp url={event.path}>
+        <h2>Chunk: WOW</h2>
+      </MyApp>,
+      {
+        onShellReady() {
+          resolve(stream);
+        },
+        bootstrapModules: [scriptSrc],
+        bootstrapScriptContent: `window.manifest = ${JSON.stringify(
+          await clientManifest.json()
+        )}`,
+      }
+    );
   });
 
   event.node.res.setHeader("Content-Type", "text/html");

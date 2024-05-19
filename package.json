@@ -12,15 +12,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vinxi/react": "^0.2.0",
-    "@vinxi/server-functions": "^0.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "vinxi": "^0.2.1"
+    "@prisma/client": "^5.14.0",
+    "@prisma/extension-pulse": "^1.0.2",
+    "@vinxi/react": "0.2.2",
+    "@vinxi/react-server-dom": "^0.0.3",
+    "@vinxi/server-components": "0.3.3",
+    "@vinxi/server-functions": "0.3.2",
+    "autoprefixer": "^10.4.15",
+    "react": "0.0.0-experimental-035a41c4e-20230704",
+    "react-dom": "0.0.0-experimental-035a41c4e-20230704",
+    "tailwindcss": "^3.3.3",
+    "vinxi": "0.3.11"
   },
   "devDependencies": {
     "@types/react": "^18.2.52",
     "@types/react-dom": "^18.2.18",
-    "@vitejs/plugin-react": "^4.2.1"
+    "@vitejs/plugin-react": "^4.0.4"
   }
 }
